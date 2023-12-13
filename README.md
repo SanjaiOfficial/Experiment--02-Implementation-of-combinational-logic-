@@ -9,25 +9,59 @@ F2=xy’z+x’y’z+w’xy+wx’y+wxy
  
  
 ## Equipments Required:
-## Hardware – PCs, Cyclone II , USB flasher
-## Software – Quartus prime
+Hardware – PCs, Cyclone II , USB flasher
+Software – Quartus prime
+## Theory:
+Logic gates are electronic circuits which perform logical functions on one or more inputs to produce one output.
+## Logic Diagram (using nand gate) and (using nor gate):
+![image](https://github.com/SanjaiOfficial/Experiment--02-Implementation-of-combinational-logic-/assets/151763180/587e6480-90b5-4d7f-85a7-8962ca2e4d28)
 
+![image](https://github.com/SanjaiOfficial/Experiment--02-Implementation-of-combinational-logic-/assets/151763180/e0df9600-202a-4026-a175-c0ebd3423fd3)
 
-## Theory
- 
-
-## Logic Diagram
 ## Procedure
+*Create a project with required entities.
+*Create a module along with respective file name.
+*Run the respective programs for the given boolean equations.
+*Run the module and get the respective RTL outputs.
+*Create university program(VWF) for getting timing diagram.
+*Give the respective inputs for timing diagram and obtain the results.
 ## Program:
-/*
-Program to implement the given logic function and to verify its operations in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-## RTL realization
 
-## Output:
-## RTL
-## Timing Diagram
+Program to implement the given logic function and to verify its operations in quartus using Verilog programming.
+
+Developed by: SANJAI L
+
+RegisterNumber: 23014237
+```
+module combinational(a,b,c,d,w,x,y,z,fl,f2);
+input a,b,c,d,w,x,y,z;
+output fl,f2;
+wire g1=((~a)&(~b)&(~c)&(~d)); 
+wire g2=((a)&(~c)&(~d));
+wire g3=((~b)&(c)&(~d));
+wire g4=((~a)&(b)&(c)&(d)); 
+wire g5=((b)&(~c)&(d));
+assign fl=g1|g2|g3|g4|g5; 
+wire g6=((x)&(~y)&(z));
+wire g7=((~x)&(~y)&(z));
+wire g8=((~w)&(x)&(y)); 
+wire g9=((w)&(~x)&(y));
+wire g10=((w)&(x)&(y)); 
+assign f2=g6|g7|g8|g9|g10;
+endmodule
+```
+## OUTPUT:
+## RTL realization of NAND AND NOR gates:
+![image](https://github.com/SanjaiOfficial/Experiment--02-Implementation-of-combinational-logic-/assets/151763180/684067ff-8cfb-450f-babc-5161d81233f7)
+
+## Truthtable of NAND gate:
+![image](https://github.com/SanjaiOfficial/Experiment--02-Implementation-of-combinational-logic-/assets/151763180/2a1b51a0-2446-4af7-9f8d-388ad40e489d)
+
+## Truthtable of NOR gate:
+![image](https://github.com/SanjaiOfficial/Experiment--02-Implementation-of-combinational-logic-/assets/151763180/11f8473f-0507-4129-9660-cbb2528c71f1)
+
+## Timing Diagram:
+![image](https://github.com/SanjaiOfficial/Experiment--02-Implementation-of-combinational-logic-/assets/151763180/8371d068-664e-459a-970a-68639ef54793)
+
 ## Result:
 Thus the given logic functions are implemented using  and their operations are verified using Verilog programming.
